@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <title>Details</title>
+
+    <link rel="canonical" href="https://getbootstrap.su/docs/5.0/examples/pricing/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="./src/bootstrap-5.0.2-dist/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container py-3">
+      <div class="pricing-header p-3 pb-md-4 mx-auto">
+        <div class="img-logo">
+          <img
+            src="./scr/img/-02.svg"
+            />
+        </div>
+        <div class="card-payment">
+          <div class="card-amount-total-body">
+
+            <h1 class="card-title card-title-center">Оплата</h1>
+            <div id="orders"></div> 
+            <div class="separator">
+              <svg xmlns="http://www.w3.org/2000/svg" width="315" height="3" viewBox="0 0 315 3" fill="none">
+                <path d="M0 1L315 2" stroke="#979797" stroke-dasharray="10 10"/>
+              </svg>
+            </div>
+            <div class="row justify-content-between mt-amount pb-14">
+              <div class="col-auto align-self-end">
+                <h3 class="client-name-amount">Сумма к оплате:</h3>
+              </div>
+              <div class="col-auto align-self-end">
+                <h3 class="client-name-amount" id="amount"></h3>
+              </div>
+            </div>
+          
+              <button type="button" class="btn btn-payment">
+                <div class="row justify-content-between">
+                  <div class="col-auto align-self-center">
+                    <p>Оплатить</p>
+                  </div>
+                  <div class="col-auto align-self-center">
+                    <div class="icon-button">
+                      <img
+                        src="./src/img/СБП_логотип-02.svg"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </button> 
+            
+          </div> 
+
+        </div>   
+      </div>
+    </div>
+  </body>
+  <script src="./js/payment.js"></script>
+</html>
