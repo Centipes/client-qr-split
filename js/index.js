@@ -20,7 +20,7 @@ let response = { ...gen.response};
 function clientsIconsHeader(idx, clientIdx){
     let span = document.createElement('span');
     span.className = "circle-img";
-    span.innerHTML = `<img src="./${gen.response[clientIdx]['icon']}"/>`;
+    span.innerHTML = `<img src="../src/img/${gen.response[clientIdx]['icon']}"/>`;
     if (idx>0){
         span.style.transform=`translate(-${idx*22}px, 0px)`;
     }
@@ -75,7 +75,7 @@ for(let i = 0; i < gen.clientsNum; i++){
     let spanClientIcon = document.createElement('span');
     spanClientIcon.className = "circle-img circle-border-color";
     spanClientIcon.style.borderColor = `${gen.response[index]['color']}`;
-    spanClientIcon.innerHTML = `<img src="./${gen.response[index]['icon']}"/>`;
+    spanClientIcon.innerHTML = `<img src="../src/img/${gen.response[index]['icon']}"/>`;
 
     let divColClientName = document.createElement('div');
     divColClientName.className = "col-auto align-self-center";

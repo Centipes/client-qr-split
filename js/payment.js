@@ -29,7 +29,7 @@ for (var index in indexArrayString){
 
     let spanIconClient = document.createElement('span');
     spanIconClient.className = "circle-img circle-border-color";
-    spanIconClient.innerHTML = `<img src="./${indexArrayString[index]['icon']}"/>`
+    spanIconClient.innerHTML = `<img src="../src/img/${indexArrayString[index]['icon']}"/>`
 
     let divColInfoClient = document.createElement('div');
     divColInfoClient.className = "col-auto align-self-end";
@@ -41,7 +41,7 @@ for (var index in indexArrayString){
     let removeButton = document.createElement('button');
     removeButton.className = 'btn-close';
     removeButton.setAttribute('type', 'button');
-    removeButton.innerHTML = "<img src='./крестик.svg'></img>";
+    removeButton.innerHTML = "<img src='../src/img/крестик.svg'></img>";
 
     let divOrderDetails = document.createElement('div');
     divOrderDetails.className = "order-details pb-amount";

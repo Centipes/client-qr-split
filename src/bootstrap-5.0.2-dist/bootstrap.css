@@ -40,21 +40,21 @@
 
 @font-face {
   font-family: "Balsamiq-Sans";
-  src: url("../fonts/BalsamiqSans-Regular.ttf") format("truetype");
+  src: url("../fonts/BalsamiqSans/BalsamiqSans-Regular.ttf") format("truetype");
   font-style: normal; 
   font-weight: normal; 
 }
 
 @font-face {
   font-family: "Comfortaa";
-  src: url("../fonts/Comfortaa-Light.ttf") format("truetype");
+  src: url("../fonts/Comfortaa/Comfortaa-Light.ttf") format("truetype");
   font-style: normal; 
   font-weight: normal; 
 }
 
 @font-face {
   font-family: "Comfortaa-Regular";
-  src: url("../fonts/Comfortaa-Regular.ttf") format("truetype");
+  src: url("../fonts/Comfortaa/Comfortaa-Regular.ttf") format("truetype");
   font-style: normal; 
   font-weight: normal; 
 }
