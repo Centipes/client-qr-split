@@ -2,7 +2,7 @@ import * as gen from './gen.js';
 
 document.cookie = 'data=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
 
-let elem = document.getElementById("row-clients-icons");
+let clientIconsPanel = document.getElementById("row-clients-icons");
 let cardSplitClients = document.getElementById("card-split");
 let splitPaymentButton = document.getElementById("split-payment-button");
 let commonPaymentButton = document.getElementById("common-payment-button");
@@ -16,6 +16,7 @@ indexesSortedStatusPaymentArray.sort((a, b) => gen.response[a]['status'] - gen.r
 let residualAmount = gen.commonAmount;
 let selectedСlients = {};
 let response = { ...gen.response};
+let firstPayingClientIdx = gen.clientsNum;
 
 function clientsIconsHeader(idx, clientIdx){
     let span = document.createElement('span');
@@ -25,36 +26,29 @@ function clientsIconsHeader(idx, clientIdx){
         span.style.transform=`translate(-${idx*22}px, 0px)`;
     }
     span.style.zIndex=`${gen.clientsNum-idx}`;
-    elem.append(span);
+    clientIconsPanel.append(span);
 }
 
-function remainingClientsNumber(idx){
+function setRemainingClientsNumber(idx){
     let span = document.createElement('span');
     let divClientCount = document.createElement('div');
     let hClientsCount = document.createElement('h3');
     
     span.className = "circle-img shift-img";
-    span.style.transform=`translate(-${idx*14}px, 0px)`;
+    span.style.transform=`translate(-${42}px, 0px)`;
     
     hClientsCount.className = 'client-name-amount';
-    hClientsCount.innerText = `+${gen.clientsNum-3}`;
+    hClientsCount.innerText = `+${idx}`;
     hClientsCount.style.color = "#000";
     hClientsCount.style.textAlign = "right";
 
     divClientCount.append(hClientsCount);
     span.append(divClientCount);
-    elem.append(span);
+    clientIconsPanel.append(span);
 }
 
 for(let i = 0; i < gen.clientsNum; i++){
     let index = indexesSortedStatusPaymentArray[i];
-
-    if(i < 3)
-       clientsIconsHeader(i, index);
-
-    if(i == 3)
-        remainingClientsNumber(i);
-
 
     let divCardClientAmount = document.createElement('div');
     divCardClientAmount.className = "btn card-client-amount";
@@ -109,9 +103,14 @@ for(let i = 0; i < gen.clientsNum; i++){
     if(gen.response[index]['status']){
         divCardClientAmount.classList.add('disabled');
         // divCardClientAmount.setAttribute('disabled', 'true');
+        if(firstPayingClientIdx == gen.clientsNum)
+            firstPayingClientIdx = i;
         residualAmount -= gen.response[index]['amount'];
         delete response[index];
     }
+
+    else if(i < 3)
+        clientsIconsHeader(i, index);
     
 
     (function(index) {
@@ -133,6 +132,10 @@ for(let i = 0; i < gen.clientsNum; i++){
     })})(index);
 
 }
+
+let remainingClientsNumber = firstPayingClientIdx - 3;
+if(remainingClientsNumber > 0)
+    setRemainingClientsNumber(remainingClientsNumber);
 
 hCommonAmount.innerText = `${residualAmount}₽`;
 splitPaymentButton.addEventListener('click', function() {
