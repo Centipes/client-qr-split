@@ -1,7 +1,7 @@
 let commonAmount = 0;
 let iconsArray = ['man-1.png', 'man-2.png', 'man-3.png', 'man-4.png', 'man-5.png', 'woman-1.png', 'woman-2.png', 'woman-3.png', 'woman-4.png', 'woman-5.png'];
 let namesArray = ['Вася', 'Миша', 'Денис', 'Миша', 'Андрей', 'Маша', 'Света', 'Рита', 'Вика', 'Аня'];
-let statusesPaymentArray = [true, false];
+let statusesPaymentArray = [false, true];
 let colorsArray = ['#F7C5BF', '#DAD0FC', '#C2FBC4', '#FBC2EB'];
 let orderNamesArray = ['Eда', 'Напиток'];
 let orderPricesArray = [200, 300, 400, 500, 600, 700, 800, 900, 1000, 1200];

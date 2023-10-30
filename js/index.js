@@ -21,16 +21,18 @@ let residualAmount = gen.commonAmount;
 let selectedСlients = {};
 let response = { ...gen.response};
 let firstPayingClientIdx = gen.clientsNum;
+let firstIconPosition = null;
 
 function clientsIconsHeader(idx, clientIdx){
     let span = document.createElement('span');
     span.className = "circle-img";
     span.innerHTML = `<img src="./src/img/${gen.response[clientIdx]['icon']}"/>`;
     if (idx>0){
-        span.style.transform=`translate(-${idx*22}px, 0px)`;
+        span.classList.add(`shift-img-${idx}`);
     }
     span.style.zIndex=`${gen.clientsNum-idx}`;
     clientIconsPanel.append(span);
+    firstIconPosition = span;
 }
 
 function setRemainingClientsNumber(idx){
@@ -38,8 +40,7 @@ function setRemainingClientsNumber(idx){
     let divClientCount = document.createElement('div');
     let hClientsCount = document.createElement('h3');
     
-    span.className = "circle-img shift-img";
-    span.style.transform=`translate(-${42}px, 0px)`;
+    span.className = "circle-img shift-txt";
     
     hClientsCount.className = 'client-name-amount';
     hClientsCount.innerText = `+${idx}`;
