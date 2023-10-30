@@ -42,18 +42,28 @@
           </div>
         </div>
         <div class="card-split-amount" id="split-block">
-          <div class="card-amount-total-body card-split-body">
-            <h1 class="card-title">Разделить счет</h1>
-            <h2 class="card-subtitle">Выберите людей, за которых хотите заплатить</h2>   
-            <div id="card-split"></div>
-            <button type="button" class="btn btn-secondary" id="split-payment-button"><p>Оплатить</p></button>   
+          <div>
+            <div class="sticky-header card-amount-total-body" id="sticky-header">
+                <div class="row justify-content-between">
+                    <div class="col-auto align-self-center">
+                        <h1 class="card-title">Разделить счет</h1>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-secondary-v2" id="split-payment-button"><p>Оплатить</p></button>   
+                    </div>
+                </div>
+                <h2 class="card-subtitle-v2">Выберите людей, за которых хотите заплатить</h2> 
+            </div>  
+            <div class="card-amount-total-body card-order-list">
+                <div id="card-split"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div id="dark-background" class="background-transparent"></div>
     <div id="bottom-panel" class="bottom-panel"></div>
-    <a href="./index-v2.html" class="link-primary d-flex align-self-center justify-content-center">version 2</a>
+    <a href="./index.html" class="link-primary d-flex align-self-center justify-content-center">version 1</a>
   </body>
   <script type="module" src="./js/index.js"></script>
 </html>

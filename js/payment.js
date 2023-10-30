@@ -16,7 +16,7 @@ for (var index in indexArrayString){
     let divClientListOrder = document.createElement('div');
 
     let divRowCardHeaderOrder = document.createElement('div');
-    divRowCardHeaderOrder.className = "row justify-content-between mt-amount";
+    divRowCardHeaderOrder.className = "row justify-content-between m-amount";
 
     let divColCardClient = document.createElement('div');
     divColCardClient.className = "col-auto";
@@ -29,6 +29,7 @@ for (var index in indexArrayString){
 
     let spanIconClient = document.createElement('span');
     spanIconClient.className = "circle-img circle-border-color";
+    spanIconClient.style.borderColor = `${indexArrayString[index]['color']}`;
     spanIconClient.innerHTML = `<img src="./src/img/${indexArrayString[index]['icon']}"/>`
 
     let divColInfoClient = document.createElement('div');
@@ -56,7 +57,8 @@ for (var index in indexArrayString){
     divColRemoveClient.append(removeButton);
 
     divRowCardHeaderOrder.append(divColCardClient);
-    divRowCardHeaderOrder.append(divColRemoveClient);
+    if(Object.keys(indexArrayString).length > 1)
+        divRowCardHeaderOrder.append(divColRemoveClient);
     divClientListOrder.append(divRowCardHeaderOrder);
 
     (function(idx) {
@@ -65,6 +67,8 @@ for (var index in indexArrayString){
         delete indexArrayString[idx];
         commonAmount = Object.values(indexArrayString).reduce((acc, curr) => acc + (curr.amount || 0), 0);
         commonAmountText.innerText = `${commonAmount}₽`;
+        if(Object.keys(indexArrayString).length == 1)
+            document.querySelector('.btn-close').style.display = "none";
     })})(index);
 
     for (let j=0; j<Object.keys(orderList).length; j++){

@@ -12,11 +12,11 @@ function getRundomInt(max){
     return Math.floor(Math.random() * max);
 }
 
-let clientsNum = getRundomInt(10)+1;
+let clientsNum = getRundomInt(20)+1;
 
 for(let i = 0; i < clientsNum; i++){
     response[i] = {};
-    let randomOrderCounts = getRundomInt(5)+1;
+    let randomOrderCounts = getRundomInt(10)+1;
     let clientAmount = 0;
 
     response[i]['name'] = namesArray[getRundomInt(iconsArray.length)];
